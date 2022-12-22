@@ -32,6 +32,11 @@ class Personal extends Component {
     console.log(this.state.isSaved);
   }
 
+  handleEdit = (event) => {
+    this.setState({
+      isSaved: false
+    })
+  }
   
 
   render() {
@@ -80,7 +85,16 @@ class Personal extends Component {
       );
     } else {
       return (
-        <p>{this.state.name}</p>
+        <div className="inputBox">
+        <h1>{this.state.name}</h1>
+        <p>{this.state.email}</p>
+        <p>{this.state.phoneNumber}</p>
+        <button
+         type="button"
+         onClick={this.handleEdit}
+         >Edit
+         </button>
+        </div>
       )
     }
 
