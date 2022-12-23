@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+h1,
+p {
+  margin: 0;
+}
+
 .inputs-container {
   display: flex;
   flex-wrap: wrap;
@@ -23,6 +28,7 @@ code {
   padding: 10px;
   display: grid;
   justify-items: start;
+  gap: 20px;
 }
 
 form{

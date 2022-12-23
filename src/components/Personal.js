@@ -4,10 +4,10 @@ class Personal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      email: "",
-      phoneNumber: "",
-      isSaved: false
+      name: "Conor Dunne",
+      email: "conor@react.com",
+      phoneNumber: "1888-555-555",
+      isSaved: true
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -43,7 +43,8 @@ class Personal extends Component {
     
     if(!this.state.isSaved) {
       return (
-        <div style={{ border: "1px solid black"}}>
+        <div>
+          <h1>Personal Information:</h1>
          <form onSubmit={this.handleSubmit}>
           <div className="inputs-container">
           <div className="inputBox">
