@@ -40,7 +40,6 @@ class Personal extends Component {
   
 
   render() {
-    
     if(!this.state.isSaved) {
       return (
         <div>
@@ -90,11 +89,11 @@ class Personal extends Component {
         <h1>{this.state.name}</h1>
         <p>{this.state.email}</p>
         <p>{this.state.phoneNumber}</p>
-        <button
+        {!this.props.inPreview && <button
          type="button"
          onClick={this.handleEdit}
          >Edit
-         </button>
+         </button>}
         </div>
       )
     }
