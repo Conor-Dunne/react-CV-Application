@@ -10,6 +10,11 @@ code {
     monospace;
 }
 
+h2,
+h3 {
+  margin: 0;
+}
+
 h1,
 p {
   margin: 10px 0;
@@ -27,6 +32,12 @@ p {
   display: grid;
   justify-items: start;
   gap: 10px;
+}
+
+.layout {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
 }
 
 form{
