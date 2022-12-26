@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Personal from "./components/Personal";
+import Education from "./components/Education";
 
 class App extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class App extends Component {
           onEdit={() => this.setState({ personalIsSaved: false })}
         />
         <hr />
+        <Education />
       </div>
     );
   }
