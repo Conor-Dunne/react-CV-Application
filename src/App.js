@@ -1,42 +1,46 @@
 import React, { Component } from "react";
-import './App.css';
-import Personal from './components/Personal';
+import "./App.css";
+import Personal from "./components/Personal";
 
 class App extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
+      personalIsSaved: true,
       inPreview: false,
-      previewBtnText: "Preview"
     };
-
   }
 
   handlePreview = () => {
-    if(!this.state.inPreview){
+    if (this.state.personalIsSaved && !this.state.inPreview) {
       this.setState({
         inPreview: true,
-        previewBtnText: "Edit"
-      })
-    } else {
+      });
+    } else if (this.state.inPreview) {
       this.setState({
         inPreview: false,
-        previewBtnText: "Preview"
-      })
+      });
+    } else {
+      alert("Some sections aren't saved");
     }
-  }
+  };
 
-  render () {
+  render() {
     return (
       <div className="App">
-        <button type="button" onClick={this.handlePreview}>{this.state.previewBtnText}</button>
-      <Personal inPreview = {this.state.inPreview} />
-      <hr/>
-    </div>
-    )
+        <button type="button" onClick={this.handlePreview}>
+          {this.state.inPreview ? "Edit" : "Preview"}
+        </button>
+        <Personal
+          inPreview={this.state.inPreview}
+          onSave={() => this.setState({ personalIsSaved: true })}
+          onEdit={() => this.setState({ personalIsSaved: false })}
+        />
+        <hr />
+      </div>
+    );
   }
-};
+}
 
 export default App;

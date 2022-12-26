@@ -29,13 +29,16 @@ class Personal extends Component {
     this.setState({
       isSaved: true
     })
-    console.log(this.state.isSaved);
+
+    this.props.onSave();
   }
 
   handleEdit = (event) => {
     this.setState({
       isSaved: false
     })
+
+    this.props.onEdit();
   }
   
 
