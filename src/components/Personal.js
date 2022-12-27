@@ -7,11 +7,9 @@ class Personal extends Component {
       name: "Conor Dunne",
       email: "conor@react.com",
       phoneNumber: "1888-555-555",
-      isSaved: true
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputChange(event) {
@@ -23,27 +21,10 @@ class Personal extends Component {
       [name]: value,
     });
   }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.setState({
-      isSaved: true
-    })
-
-    this.props.onSave();
-  }
-
-  handleEdit = (event) => {
-    this.setState({
-      isSaved: false
-    })
-
-    this.props.onEdit();
-  }
   
-
   render() {
-    if(!this.state.isSaved) {
+    if(!this.props.inPreview) {
+      console.log(this.state.inPreview)
       return (
         <div>
           <h1>Personal Information:</h1>
@@ -81,7 +62,6 @@ class Personal extends Component {
            </div>
           </div>
            <div className="button-bar">
-           <button type="submit">Save</button>
            </div>
           </form>
         </div>
@@ -92,11 +72,6 @@ class Personal extends Component {
         <h1>{this.state.name}</h1>
         <p>{this.state.email}</p>
         <p>{this.state.phoneNumber}</p>
-        {!this.props.inPreview && <button
-         type="button"
-         onClick={this.handleEdit}
-         >Edit
-         </button>}
         </div>
       )
     }

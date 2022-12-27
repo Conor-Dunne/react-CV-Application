@@ -8,22 +8,20 @@ class App extends Component {
     super(props);
 
     this.state = {
-      personalIsSaved: true,
+      // personalIsSaved: true,
       inPreview: false,
     };
   }
 
   handlePreview = () => {
-    if (this.state.personalIsSaved && !this.state.inPreview) {
+    if (!this.state.inPreview) {
       this.setState({
         inPreview: true,
       });
-    } else if (this.state.inPreview) {
+    } else {
       this.setState({
         inPreview: false,
       });
-    } else {
-      alert("Some sections aren't saved");
     }
   };
 
@@ -35,11 +33,9 @@ class App extends Component {
         </button>
         <Personal
           inPreview={this.state.inPreview}
-          onSave={() => this.setState({ personalIsSaved: true })}
-          onEdit={() => this.setState({ personalIsSaved: false })}
         />
         <hr />
-        <Education />
+        <Education inPreview={this.state.inPreview} />
       </div>
     );
   }
