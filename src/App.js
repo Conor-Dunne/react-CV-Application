@@ -36,6 +36,7 @@ class App extends Component {
         />
         <hr />
         <Education inPreview={this.state.inPreview} />
+        <hr />
       </div>
     );
   }

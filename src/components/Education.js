@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import EducationView from "./EducationView";
+import uniqid from "uniqid";
 
 class Education extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Education extends Component {
         course: "International Business",
         startdate: "2013-01-01",
         endDate: "2013-06-15",
+        id: uniqid()
       },
       institutes: [
         {
@@ -18,11 +20,13 @@ class Education extends Component {
           course: "Bachelor of Business",
           startdate: "2010-09-01",
           endDate: "2014-06-15",
+          id: "7657"
         },
       ],
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleInputChange(event) {
@@ -50,6 +54,13 @@ class Education extends Component {
       },
     });
   };
+
+  handleDelete(id) {
+    this.setState((prevState) => ({
+      institutes: prevState.institutes.filter((institute) => institute.id !== id),
+    }));
+  }
+  
 
   render() {
     if(!this.props.inPreview) {
@@ -103,7 +114,7 @@ class Education extends Component {
             <button type="submit">Add</button>
           </div>
         </form>
-        <EducationView institutes={this.state.institutes} />
+        <EducationView institutes={this.state.institutes} onDelete = {this.handleDelete} />
       </div>
       )
     } else {

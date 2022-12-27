@@ -9,15 +9,14 @@ class EducationView extends Component {
         return (
             
                 <div  className="layout">
-                    <h1>Education:</h1>
+                    <h1><u>Education:</u></h1>
                     {this.props.institutes.map((institute) => {
                     return (
-                        <div  className="layout">
+                        <div  className="item">
                             <h3>{institute.name}</h3>
                             <h3>{institute.course}</h3>
                             <p>{`${institute.startdate} to ${institute.endDate}`}</p>
-                            {/* <button>edit</button>
-                            <button>delete</button> */}
+                            <button onClick={() => this.props.onDelete(institute.id)} >delete</button>
                         </div>
                     )
                 })}

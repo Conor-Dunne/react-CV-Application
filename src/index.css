@@ -37,7 +37,13 @@ p {
 .layout {
   display: grid;
   justify-items: start;
-  gap: 6px;
+  gap: 20px;
+}
+
+.item{
+  display: grid;
+  justify-items: start;
+  margin-top: 10px;
 }
 
 form{

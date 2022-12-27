@@ -68,7 +68,7 @@ class Personal extends Component {
       );
     } else {
       return (
-        <div className="inputBox">
+        <div className="item">
         <h1>{this.state.name}</h1>
         <p>{this.state.email}</p>
         <p>{this.state.phoneNumber}</p>
