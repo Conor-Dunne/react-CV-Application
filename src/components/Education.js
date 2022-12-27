@@ -114,7 +114,7 @@ class Education extends Component {
             <button type="submit">Add</button>
           </div>
         </form>
-        <EducationView institutes={this.state.institutes} onDelete = {this.handleDelete} />
+        <EducationView institutes={this.state.institutes} onDelete={this.handleDelete} />
       </div>
       )
     } else {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Personal from "./components/Personal";
 import Education from "./components/Education";
+import Experience from "./components/Experience";
 
 class App extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class App extends Component {
         <hr />
         <Education inPreview={this.state.inPreview} />
         <hr />
+        <Experience />
       </div>
     );
   }
