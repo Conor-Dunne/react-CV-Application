@@ -7,13 +7,13 @@ class EducationView extends Component {
         <h1
          style={{ display: !this.props.inPreview ? "none" : "block" }}
         >
-          <u>Education:</u>
+          Education:
         </h1>
         {this.props.institutes.map((institute) => {
           return (
             <div className="item">
-              <h3>{institute.name}</h3>
               <h3>{institute.course}</h3>
+              <p>{institute.name}</p>
               <p>{`${institute.startdate} to ${institute.endDate}`}</p>
               <div className="button-bar">
               <button
