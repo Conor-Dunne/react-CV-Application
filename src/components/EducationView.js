@@ -15,7 +15,10 @@ class EducationView extends Component {
                             <h3>{institute.name}</h3>
                             <h3>{institute.course}</h3>
                             <p>{`${institute.startdate} to ${institute.endDate}`}</p>
-                            <button onClick={() => this.props.onDelete(institute.id)} >Delete
+                            <button 
+                            onClick={() => this.props.onDelete(institute.id)} 
+                            style={{ display: this.props.inPreview ? 'none' : 'block' }}
+                            >Delete
 </button>
                         </div>
                     )

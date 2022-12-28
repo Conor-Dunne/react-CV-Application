@@ -118,7 +118,7 @@ class Education extends Component {
       </div>
       )
     } else {
-      return <EducationView institutes={this.state.institutes} />
+      return <EducationView institutes={this.state.institutes} inPreview = {true} />
 
     }
   }

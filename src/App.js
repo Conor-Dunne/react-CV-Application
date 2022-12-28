@@ -38,7 +38,7 @@ class App extends Component {
         <hr />
         <Education inPreview={this.state.inPreview} />
         <hr />
-        <Experience />
+        <Experience inPreview={this.state.inPreview}/>
       </div>
     );
   }
