@@ -1,6 +1,3 @@
-html {
-  
-}
 
 body {
   margin: 0;
@@ -37,8 +34,13 @@ ul {
 
 input,
 textarea {
-  font-size: 15px;
   font-family: inherit;
+}
+
+textarea {
+  width: 96%;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .inputs-container {
