@@ -1,4 +1,4 @@
-I took advantage of GitHub's Codespace to bootstrap this Rect CV builder application.
+I took advantage of GitHub's Codespace to bootstrap this React CV builder application.
 
 ================================================================
 
