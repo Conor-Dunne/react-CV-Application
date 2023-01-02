@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 
 class Logo extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
 
   render() {
     return (
@@ -23,6 +21,7 @@ class Logo extends Component {
               width: "50px",
             }}
             src={require("../hat-wizard-solid.svg")}
+            alt={"A wizard's hat"}
           ></img>
   }RD</h1>
       </div>
