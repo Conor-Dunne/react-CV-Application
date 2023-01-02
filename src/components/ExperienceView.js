@@ -4,18 +4,26 @@ class ExperienceView extends Component {
   render() {
     return (
       <div className="layout">
-        <h1 style={{ display: !this.props.inPreview ? "none" : "block" }}>
+        <h1
+          style={{ display: !this.props.inPreview ? "none" : "block" }}
+        >
           Experience:
         </h1>
+        <hr />
         {this.props.companies.map((company) => {
           return (
             <div className="item">
-              <h3>{company.job_title}</h3>
-              <p>{company.name}</p>
-              <p>{`${company.startdate} to ${company.endDate}`}</p>
-              <ul>
-                <li>{company.description}</li>
-              </ul>
+              <div className="dates">
+                <p>{`${company.startdate}-`}</p>
+                <p>{`${company.endDate}-`}</p>
+              </div>
+              <div>
+                <h3>{company.job_title}</h3>
+                <p>{company.name}</p>
+                <ul>
+                  <li>{company.description}</li>
+                </ul>
+              </div>
               <div className="button-bar">
                 <button
                   className="delete-btn"

@@ -8,12 +8,11 @@ class Experience extends Component {
 
     this.state = {
       company: {
-        name: "NASA",
-        job_title: "Astronaut",
-        startdate: "2013-01-01",
-        endDate: "2013-06-15",
-        description:
-          "As an astronaut for NASA, I have had the opportunity to work on a variety of challenging and rewarding missions. I have extensive experience training for and conducting spacewalks, as well as operating complex systems and conducting scientific experiments in microgravity environments. I am highly skilled in teamwork, communication, and problem-solving, and have a strong passion for exploration and discovery. I am excited to continue pursuing my career as an astronaut and contribute to the advancement of space exploration and research.",
+        name: "",
+        job_title: "",
+        startdate: "",
+        endDate: "",
+        description: "",
         id: uniqid(),
       },
       companies: [
@@ -22,8 +21,18 @@ class Experience extends Component {
           job_title: "Web Developer",
           startdate: "2010-09-01",
           endDate: "2014-06-15",
-          description: "As a self-taught web developer, I have a strong foundation in HTML, CSS, and JavaScript, and am currently studying React to further enhance my skills. I have a passion for creating responsive, user-friendly websites and applications, and am committed to continuous learning and growth in my field. I am proficient in agile development methodologies and version control using Git, and am skilled in problem-solving and communication. I am excited to continue learning and developing my skills as a web developer, and to contribute to the creation of innovative and engaging online experiences.",
+          description:
+            "As a self-taught web developer, I have a strong foundation in HTML, CSS, and JavaScript, and am currently studying React to further enhance my skills. I have a passion for creating responsive, user-friendly websites and applications, and am committed to continuous learning and growth in my field. I am proficient in agile development methodologies and version control using Git, and am skilled in problem-solving and communication. I am excited to continue learning and developing my skills as a web developer, and to contribute to the creation of innovative and engaging online experiences.",
           id: "7657",
+        },
+        {
+          name: "NASA",
+          job_title: "Astronaut",
+          startdate: "2013-01-01",
+          endDate: "2013-06-15",
+          description:
+            "As an astronaut for NASA, I have had the opportunity to work on a variety of challenging and rewarding missions. I have extensive experience training for and conducting spacewalks, as well as operating complex systems and conducting scientific experiments in microgravity environments. I am highly skilled in teamwork, communication, and problem-solving, and have a strong passion for exploration and discovery. I am excited to continue pursuing my career as an astronaut and contribute to the advancement of space exploration and research.",
+          id: "98787",
         },
       ],
     };
@@ -68,7 +77,7 @@ class Experience extends Component {
     if (!this.props.inPreview) {
       return (
         <div>
-          <h1>Experience:</h1>
+          <h1 className="edit-title">Experience:</h1>
           <form onSubmit={this.handleSubmit}>
             <div className="inputs-container">
               <div className="inputBox">

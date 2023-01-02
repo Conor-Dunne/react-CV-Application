@@ -3,6 +3,7 @@ import "./App.css";
 import Personal from "./components/Personal";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import Logo from "./components/Logo";
 
 class App extends Component {
   constructor(props) {
@@ -29,15 +30,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Logo />
         <button type="button" onClick={this.handlePreview}>
           {this.state.inPreview ? "Edit" : "Preview"}
         </button>
         <Personal
           inPreview={this.state.inPreview}
         />
-        <hr />
+        
         <Education inPreview={this.state.inPreview} />
-        <hr />
+        
         <Experience inPreview={this.state.inPreview}/>
       </div>
     );

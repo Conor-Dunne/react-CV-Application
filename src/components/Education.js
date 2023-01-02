@@ -8,11 +8,11 @@ class Education extends Component {
 
     this.state = {
       institute: {
-        name: "Shanghai University of Economics and Business",
-        course: "International Business",
-        startdate: "2013-01-01",
-        endDate: "2013-06-15",
-        id: uniqid()
+        name: "",
+        course: "",
+        startdate: "",
+        endDate: "",
+        id: uniqid(),
       },
       institutes: [
         {
@@ -20,7 +20,14 @@ class Education extends Component {
           course: "Bachelor of Business",
           startdate: "2010-09-01",
           endDate: "2014-06-15",
-          id: "7657"
+          id: "7657",
+        },
+        {
+          name: "Shanghai University of Economics and Business",
+          course: "International Business",
+          startdate: "2013-01-01",
+          endDate: "2013-06-15", 
+          id: "987987", 
         },
       ],
     };
@@ -35,10 +42,10 @@ class Education extends Component {
     const name = target.name;
 
     this.setState({
-        institute: {
-            ...this.state.institute,
-            [name]: value,
-          },
+      institute: {
+        ...this.state.institute,
+        [name]: value,
+      },
     });
   }
 
@@ -57,69 +64,74 @@ class Education extends Component {
 
   handleDelete(id) {
     this.setState((prevState) => ({
-      institutes: prevState.institutes.filter((institute) => institute.id !== id),
+      institutes: prevState.institutes.filter(
+        (institute) => institute.id !== id
+      ),
     }));
   }
-  
 
   render() {
-    if(!this.props.inPreview) {
+    if (!this.props.inPreview) {
       return (
         <div>
-        <h1>Education:</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className="inputs-container">
-            <div className="inputBox">
-              <label htmlFor="name">School Name: </label>
-              <input
-                name="name"
-                type="text"
-                value={this.state.institute.name}
-                required
-                onChange={this.handleInputChange}
-              />
+          <h1 className="edit-title">Education:</h1>
+          <form onSubmit={this.handleSubmit}>
+            <div className="inputs-container">
+              <div className="inputBox">
+                <label htmlFor="name">School Name: </label>
+                <input
+                  name="name"
+                  type="text"
+                  value={this.state.institute.name}
+                  required
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div className="inputBox">
+                <label htmlFor="course">course: </label>
+                <input
+                  name="course"
+                  type="text"
+                  value={this.state.institute.course}
+                  required
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div className="inputBox">
+                <label htmlFor="startdate">Start: </label>
+                <input
+                  name="startdate"
+                  type="date"
+                  value={this.state.institute.startdate}
+                  required
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div className="inputBox">
+                <label htmlFor="endDate">Finish: </label>
+                <input
+                  name="endDate"
+                  type="date"
+                  value={this.state.institute.endDate}
+                  required
+                  onChange={this.handleInputChange}
+                />
+              </div>
             </div>
-            <div className="inputBox">
-              <label htmlFor="course">course: </label>
-              <input
-                name="course"
-                type="text"
-                value={this.state.institute.course}
-                required
-                onChange={this.handleInputChange}
-              />
+            <div className="button-bar">
+              <button type="submit">Add</button>
             </div>
-            <div className="inputBox">
-              <label htmlFor="startdate">Start: </label>
-              <input
-                name="startdate"
-                type="date"
-                value={this.state.institute.startdate}
-                required
-                onChange={this.handleInputChange}
-              />
-            </div>
-            <div className="inputBox">
-              <label htmlFor="endDate">Finish: </label>
-              <input
-                name="endDate"
-                type="date"
-                value={this.state.institute.endDate}
-                required
-                onChange={this.handleInputChange}
-              />
-            </div>
-          </div>
-          <div className="button-bar">
-            <button type="submit">Add</button>
-          </div>
-        </form>
-        <EducationView institutes={this.state.institutes} onDelete={this.handleDelete} />
-      </div>
-      )
+          </form>
+          <EducationView
+            institutes={this.state.institutes}
+            onDelete={this.handleDelete}
+          />
+        </div>
+      );
     } else {
-      return <EducationView institutes={this.state.institutes} inPreview = {true} />
-
+      return (
+        <EducationView institutes={this.state.institutes} inPreview={true} />
+      );
     }
   }
 }

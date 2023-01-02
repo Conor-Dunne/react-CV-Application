@@ -27,7 +27,7 @@ class Personal extends Component {
       console.log(this.state.inPreview)
       return (
         <div>
-          <h1>Personal Information:</h1>
+          <h1 className="edit-title">Personal Information:</h1>
          <form onSubmit={this.handleSubmit}>
           <div className="inputs-container">
           <div className="inputBox">
@@ -68,7 +68,7 @@ class Personal extends Component {
       );
     } else {
       return (
-        <div className="item" id="head">
+        <div id="head">
         <h1>{this.state.name}</h1>
         <p>{this.state.email}</p>
         <p>{this.state.phoneNumber}</p>
