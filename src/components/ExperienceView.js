@@ -12,14 +12,18 @@ class ExperienceView extends Component {
         <hr />
         {this.props.companies.map((company) => {
           return (
-            <div className="item">
+            <div className="item"
+            style={{ backgroundColor: !this.props.inPreview ? "aliceblue" : "none" }}
+            >
               <div className="dates">
                 <p>{`${company.startdate}-`}</p>
-                <p>{`${company.endDate}-`}</p>
+                <p>{`${company.endDate}`}</p>
               </div>
-              <div>
+                <div id="title">
                 <h3>{company.job_title}</h3>
                 <p>{company.name}</p>
+                </div>
+                <div id="info">
                 <ul>
                   <li>{company.description}</li>
                 </ul>

@@ -12,7 +12,7 @@ class Logo extends Component {
         gap: "20px",
         }}>
         <h1 style={{
-            fontSize: "70px",
+            fontSize: "clamp(16px, 8vw, 70px)",
             fontWeight: "500",
             letterSpacing: "5px",
 

@@ -5,7 +5,7 @@ body {
   font-family: Inter,Helvetica Neue,Helvetica,Arial,sans-serif;  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: grey;
-  font-size: 14px;
+  font-size: clamp(2px, 2vw, 12px);
   line-height: 2;
 }
 
@@ -16,7 +16,7 @@ div {
 h1 {
   font-weight: 100;
 }
-h1,
+
 h2,
 h3,
 p {
@@ -31,6 +31,10 @@ h1 {
 ul {
   padding-left: 15px;
   text-align: justify;
+}
+
+#info {
+  grid-area: 2 / 1 / 2 / -1;
 }
 
 hr {
@@ -96,17 +100,24 @@ textarea {
 
 .item{
   display: grid;
-  grid-template-columns: 100px auto auto;
-  justify-items: start;
-  align-items: center;
+  grid-template-columns: max-content 5fr;
   margin-top: 5px;
   width: 100%;
   padding: 10px;
-  gap: 50px;
+  gap: 1em;
+}
+
+#title {
+  grid-row: 1;
+  grid-column: 2 / span 4;
+  
 }
 
 .dates {
+  grid-row: 1;
+  grid-column: 1 / span 1;
   font-weight: bold;
+  font-size: 1.17em;
   align-self: flex-start;
 }
 
@@ -117,6 +128,8 @@ form{
 }
 
 .button-bar {
+  grid-row: 3;
+  grid-column: 1 / span 5;
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -124,11 +137,12 @@ form{
 }
 
 button {
+  font-size: inherit;
   background-color: rgb(94, 94, 220);
   border: none;
   margin: 5px 5px 5px 0;
   padding: 10px;
-  width: 100px;
+  width: 80px;
   height: fit-content;
   color: white;
   border-radius: 5px;

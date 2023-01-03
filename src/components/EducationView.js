@@ -12,12 +12,14 @@ class EducationView extends Component {
         <hr />
         {this.props.institutes.map((institute) => {
           return (
-            <div className="item">
+            <div className="item"
+            style={{ backgroundColor: !this.props.inPreview ? "aliceblue" : "none" }}
+            >
               <div className="dates">
                 <p>{`${institute.startdate}-`}</p>
                 <p>{`${institute.endDate}`}</p>
               </div>
-              <div>
+              <div id="title">
                 <h3>{institute.course}</h3>
                 <p>{institute.name}</p>
               </div>
