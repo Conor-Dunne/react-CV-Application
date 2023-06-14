@@ -1,4 +1,14 @@
-I took advantage of GitHub's Codespace to bootstrap this React CV builder application.
+# CV Creator
+
+A React app that allows users to create their own resumes.
+
+[Live Demo](https://conor-dunne.github.io/React-CV-Application/) :point_left:
+
+
+## Built with
+
+- [React](https://reactjs.org/)
+- [uuid](https://www.npmjs.com/package/uuid)
 
 ================================================================
 
