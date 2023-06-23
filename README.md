@@ -2,6 +2,11 @@
 
 A React app that allows users to create their own resumes.
 
+# Screenshot
+
+![Screenshot](./public/Capture.jpg)
+
+
 [Live Demo](https://conor-dunne.github.io/React-CV-Application/) :point_left:
 
 
